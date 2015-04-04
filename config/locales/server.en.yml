@@ -160,9 +160,9 @@ en:
   next_page: "next page →"
   prev_page: "← previous page"
   page_num: "Page %{num}"
-  topics_in_category: "Topics in the '%{category}' category"
+  topics_in_category: "Topics in the '%{category}' city"
   rss_posts_in_topic: "RSS feed of '%{topic}'"
-  rss_topics_in_category: "RSS feed of topics in the '%{category}' category"
+  rss_topics_in_category: "RSS feed of topics in the '%{category}' city"
   author_wrote: "%{author} wrote:"
   num_posts: "Posts:"
   num_participants: "Participants:"
@@ -201,7 +201,7 @@ en:
 
       - What is this about? Who would be interested in it? Why does it matter? What kind of responses are you hoping for from the community?
 
-      - Include good search words in your topic so others can *find* it. To group your topic with related topics, select a category.
+      - Include good search words in your topic so others can *find* it. To group your topic with related topics, select a city.
 
       For more, [see our community guidelines](/guidelines). This panel will only appear for your first %{education_posts_text}.
 
@@ -258,7 +258,7 @@ en:
   activerecord:
     attributes:
       category:
-        name: "Category Name"
+        name: "City Name"
       post:
         raw: "Body"
       user_profile:
@@ -295,13 +295,13 @@ en:
     no_info_other: "<div class='missing-profile'>%{name} hasn't entered anything in the About Me field of their profile yet</div>"
 
   vip_category_name: "Lounge"
-  vip_category_description: "A category exclusive to members with trust level 3 and higher."
+  vip_category_description: "A city exclusive to members with trust level 3 and higher."
 
   meta_category_name: "Meta"
   meta_category_description: "Discussion about this site, its organization, how it works, and how we can improve it."
 
   staff_category_name: "Staff"
-  staff_category_description: "Private category for staff discussions. Topics are only visible to admins and moderators."
+  staff_category_description: "Private city for staff discussions. Topics are only visible to admins and moderators."
 
   assets_topic_body: "This is a permanent topic, visible only to staff, for storing images and files used in the site design. Don't delete it!\n\n\nHere's how:\n\n\n1. Reply to this topic.\n2. Upload all the images you wish to use for logos, favicons, and so forth here. (Use the upload toolbar icon in the post editor, or drag-and-drop or paste images.)\n3. Submit your reply to post it.\n4. Right click the images in your new post to get the path to the uploaded images, or click the edit icon to edit your post and retrieve the path to the images. Copy the image paths.\n5. Paste those image paths into [basic settings](/admin/site_settings/category/required).\n\n\nIf you need to enable different file type uploads, edit `authorized_extensions` in the [file settings](/admin/site_settings/category/files)."
 
@@ -316,9 +316,9 @@ en:
       You can now &hellip;
 
       * Edit the title of any topic
-      * Change the category of any topic
+      * Change the City of any topic
       * Have all your links followed ([automatic nofollow](http://en.wikipedia.org/wiki/Nofollow) is removed)
-      * Access a private Lounge category only visible to users at trust level 3 and higher
+      * Access a private Lounge city only visible to users at trust level 3 and higher
       * Hide spam with a single flag
 
       Here's the [current list of fellow regulars](/badges/3/regular). Be sure to say hi.
@@ -331,20 +331,20 @@ en:
 
 
   category:
-    topic_prefix: "About the %{category} category"
-    replace_paragraph: "[Replace this first paragraph with a short description of your new category. This guidance will appear in the category selection area, so try to keep it below 200 characters. Until you edit this text or create topics, this category won't appear on the categories page.]"
-    post_template: "%{replace_paragraph}\n\nUse the following paragraphs for a longer description, as well as to establish any category guidelines or rules.\n\nSome things to consider in any discussion replies below:\n\n- What is this category for? Why should people select this category for their topic?\n\n- How is this different than the other categories we already have?\n\n- Do we need this category?\n\n- Should we merge this with another category, or split it into more categories?\n"
+    topic_prefix: "About the %{category} city"
+    replace_paragraph: "[Replace this first paragraph with a short description of your new city. This guidance will appear in the city selection area, so try to keep it below 200 characters. Until you edit this text or create topics, this city won't appear on the cities page.]"
+    post_template: "%{replace_paragraph}\n\nUse the following paragraphs for a longer description, as well as to establish any city guidelines or rules.\n\nSome things to consider in any discussion replies below:\n\n- What is this city for? Why should people select this city for their topic?\n\n- How is this different than the other cities we already have?\n\n- Do we need this city?\n\n- Should we merge this with another city, or split it into more cities?\n"
     errors:
-      uncategorized_parent: "Uncategorized can't have a parent category"
+      uncategorized_parent: "Uncategorized can't have a parent city"
       self_parent: "A subcategory's parent cannot be itself"
       depth: "You can't nest a subcategory under another"
     cannot_delete:
       uncategorized: "Can't delete Uncategorized"
-      has_subcategories: "Can't delete this category because it has sub-categories."
+      has_subcategories: "Can't delete this city because it has sub-categories."
       topic_exists:
-        one: "Can't delete this category because is has 1 topic. Oldest topic is %{topic_link}."
-        other: "Can't delete this category because it has %{count} topics. Oldest topic is %{topic_link}."
-      topic_exists_no_oldest: "Can't delete this category because topic count is %{count}."
+        one: "Can't delete this city because is has 1 topic. Oldest topic is %{topic_link}."
+        other: "Can't delete this city because it has %{count} topics. Oldest topic is %{topic_link}."
+      topic_exists_no_oldest: "Can't delete this city because topic count is %{count}."
   trust_levels:
     newuser:
       title: "new user"
