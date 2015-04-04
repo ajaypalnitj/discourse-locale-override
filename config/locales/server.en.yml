@@ -1,0 +1,649 @@
+# encoding: utf-8
+# This file contains content for the server portion of Discourse used by Ruby
+#
+# To work with us on translations, see:
+# https://www.transifex.com/projects/p/discourse-org/
+#
+# This is a "source" file, which is used by Transifex to get translations for other languages.
+# After this file is changed, it needs to be pushed by a maintainer to Transifex:
+#
+#   tx push -s
+#
+# Read more here: https://meta.discourse.org/t/contribute-a-translation-to-discourse/14882
+#
+# To validate this YAML file after you change it, please paste it into
+# http://yamllint.com/
+
+en:
+  dates:
+    short_date_no_year: "D MMM"
+    short_date: "D MMM, YYYY"
+    long_date: "MMMM D, YYYY h:mma"
+
+  datetime: &datetime
+    month_names:
+      [~, January, February, March, April, May, June, July, August, September, October, November, December]
+    formats:
+      short: "%m-%d-%Y"
+      short_no_year: "%B %-d"
+      date_only: "%b %-d, %Y"
+  date:
+    <<: *datetime
+  time:
+    <<: *datetime
+
+  title: "Discourse"
+  topics: "Topics"
+  posts: "posts"
+  loading: "Loading"
+  powered_by_html: 'Powered by <a href="http://www.discourse.org">Discourse</a>, best viewed with JavaScript enabled'
+  log_in: "Log In"
+
+  via: "%{username} via %{site_name}"
+  is_reserved: "is reserved"
+
+  purge_reason: "Automatically deleted as abandoned, unactivated account"
+  disable_remote_images_download_reason: "Remote images download was disabled because there wasn't enough disk space available."
+
+  errors: &errors
+    format: ! '%{attribute} %{message}'
+    messages:
+      too_long_validation: "is limited to %{max} characters; you entered %{length}."
+      invalid_boolean: "Invalid boolean."
+      taken: "has already been taken"
+      accepted: must be accepted
+      blank: can't be blank
+      present: must be blank
+      confirmation: ! "doesn't match %{attribute}"
+      empty: can't be empty
+      equal_to: must be equal to %{count}
+      even: must be even
+      exclusion: is reserved
+      greater_than: must be greater than %{count}
+      greater_than_or_equal_to: must be greater than or equal to %{count}
+      inclusion: is not included in the list
+      invalid: is invalid
+      less_than: must be less than %{count}
+      less_than_or_equal_to: must be less than or equal to %{count}
+      not_a_number: is not a number
+      not_an_integer: must be an integer
+      odd: must be odd
+      record_invalid: ! 'Validation failed: %{errors}'
+      restrict_dependent_destroy:
+        one: "Cannot delete record because a dependent %{record} exists"
+        many: "Cannot delete record because dependent %{record} exist"
+      too_long:
+        one: is too long (maximum is 1 character)
+        other: is too long (maximum is %{count} characters)
+      too_short:
+        one: is too short (minimum is 1 character)
+        other: is too short (minimum is %{count} characters)
+      wrong_length:
+        one: is the wrong length (should be 1 character)
+        other: is the wrong length (should be %{count} characters)
+      other_than: "must be other than %{count}"
+    template:
+      body: ! 'There were problems with the following fields:'
+      header:
+        one: 1 error prohibited this %{model} from being saved
+        other: ! '%{count} errors prohibited this %{model} from being saved'
+    embed:
+      load_from_remote: "There was an error loading that post."
+
+  activemodel:
+    errors:
+      <<: *errors
+  activerecord:
+    errors:
+      <<: *errors
+
+  bulk_invite:
+    file_should_be_csv: "The uploaded file should be of csv or txt format."
+
+  backup:
+    operation_already_running: "An operation is currently running. Can't start a new job right now."
+    backup_file_should_be_tar_gz: "The backup file should be a .tar.gz archive."
+    not_enough_space_on_disk: "There is not enough space on disk to upload this backup."
+
+  not_logged_in: "You need to be logged in to do that."
+  not_found: "The requested URL or resource could not be found."
+  invalid_access: "You are not permitted to view the requested resource."
+  read_only_mode_enabled: "The site is in read only mode. Interactions are disabled."
+
+  too_many_replies:
+    one: "We're sorry, but new users are temporarily limited to 1 reply in the same topic."
+    other: "We're sorry, but new users are temporarily limited to %{count} replies in the same topic."
+
+  embed:
+    start_discussion: "Start Discussion"
+    continue: "Continue Discussion"
+    more_replies:
+      one: "1 more reply"
+      other: "%{count} more replies"
+
+    loading: "Loading Discussion..."
+    permalink: "Permalink"
+    imported_from: "This is a companion discussion topic for the original entry at %{link}"
+    in_reply_to: "▶ %{username}"
+    replies:
+      one: "1 reply"
+      other: "%{count} replies"
+
+  too_many_mentions:
+    zero: "Sorry, you can't mention other users."
+    one: "Sorry, you can only mention one other user in a post."
+    other: "Sorry, you can only mention %{count} users in a post."
+  too_many_mentions_newuser:
+    zero: "Sorry, new users can't mention other users."
+    one: "Sorry, new users can only mention one other user in a post."
+    other: "Sorry, new users can only mention %{count} users in a post."
+  too_many_images:
+    zero: "Sorry, new users can't put images in posts."
+    one: "Sorry, new users can only put one image in a post."
+    other: "Sorry, new users can only put %{count} images in a post."
+  too_many_attachments:
+    zero: "Sorry, new users can't put attachments in posts."
+    one: "Sorry, new users can only put one attachment in a post."
+    other: "Sorry, new users can only put %{count} attachments in a post."
+  too_many_links:
+    zero: "Sorry, new users can't put links in posts."
+    one: "Sorry, new users can only put one link in a post."
+    other: "Sorry, new users can only put %{count} links in a post."
+  spamming_host: "Sorry you cannot post a link to that host."
+  user_is_suspended: "Suspended users are not allowed to post."
+  topic_not_found: "Something has gone wrong. Perhaps this topic was closed or deleted while you were looking at it?"
+
+  just_posted_that: "is too similar to what you recently posted"
+  has_already_been_used: "has already been used"
+  invalid_characters: "contains invalid characters"
+  is_invalid: "is invalid; try to be a little more descriptive"
+  next_page: "next page →"
+  prev_page: "← previous page"
+  page_num: "Page %{num}"
+  topics_in_category: "Topics in the '%{category}' category"
+  rss_posts_in_topic: "RSS feed of '%{topic}'"
+  rss_topics_in_category: "RSS feed of topics in the '%{category}' category"
+  author_wrote: "%{author} wrote:"
+  num_posts: "Posts:"
+  num_participants: "Participants:"
+  read_full_topic: "Read full topic"
+  private_message_abbrev: "Msg"
+  rss_description:
+    latest: "Latest topics"
+    hot: "Hot topics"
+  too_late_to_edit: "That post was created too long ago. It can no longer be edited or deleted."
+
+  excerpt_image: "image"
+
+  groups:
+    errors:
+      can_not_modify_automatic: "You can not modify an automatic group"
+    default_names:
+      everyone: "everyone"
+      admins: "admins"
+      moderators: "moderators"
+      staff: "staff"
+      trust_level_0: "trust_level_0"
+      trust_level_1: "trust_level_1"
+      trust_level_2: "trust_level_2"
+      trust_level_3: "trust_level_3"
+      trust_level_4: "trust_level_4"
+
+  education:
+    until_posts:
+      one: "1 post"
+      other: "%{count} posts"
+
+    'new-topic': |
+      Welcome to %{site_name} &mdash; **thanks for starting a new conversation!**
+
+      - Does the title accurately describe your topic? Does it sound interesting?
+
+      - What is this about? Who would be interested in it? Why does it matter? What kind of responses are you hoping for from the community?
+
+      - Include good search words in your topic so others can *find* it. To group your topic with related topics, select a category.
+
+      For more, [see our community guidelines](/guidelines). This panel will only appear for your first %{education_posts_text}.
+
+    'new-reply': |
+      Welcome to %{site_name} &mdash; **thanks for contributing!**
+
+      - Does your reply improve the conversation in some way?
+
+      - Be kind to your fellow community members.
+
+      - Constructive criticism is welcome, but criticize *ideas*, not people.
+
+      For more, [see our community guidelines](/guidelines). This panel will only appear for your first %{education_posts_text}.
+
+    avatar: |
+      ### How about a new picture for your account?
+
+      You've posted a few topics and replies, but your avatar isn't as unique as you are -- it's the same default avatar all new users have.
+
+      Have you considered **[visiting your user profile](%{profile_path})** and uploading a custom image that represents you?
+
+      It's easier to follow community discussions and find interesting people in conversations when everyone has a unique avatar!
+
+    sequential_replies: |
+      ### Consider replying to several posts at once
+
+      Rather than many sequential replies to a topic, please consider a single reply that includes quotes from previous posts or @name references.
+
+      You can edit your previous reply to add a quote by highlighting text and selecting the <b>quote reply</b> button that appears.
+
+      It's easier for everyone to read topics that have fewer in-depth replies versus lots of small, individual replies.
+
+    dominating_topic: |
+      ### Let others join the conversation
+
+      This topic is clearly important to you &ndash; you've posted more than %{percent}% of the replies here.
+
+      Are you sure you're providing adequate time for other people to share their points of view, too?
+
+    too_many_replies: |
+      ### You have reached the reply limit for this topic
+
+      We're sorry, but new users are temporarily limited to %{newuser_max_replies_per_topic} replies in the same topic.
+
+      Instead of adding another reply, please consider editing your previous replies, or visiting other topics.
+
+    reviving_old_topic: |
+      ### Revive this topic?
+
+      The last reply to this topic is now over %{days} days old. Your reply will bump the topic to the top of its list and notify anyone previously involved in the conversation.
+
+      Are you sure you want to continue this old conversation?
+
+  activerecord:
+    attributes:
+      category:
+        name: "Category Name"
+      post:
+        raw: "Body"
+      user_profile:
+        bio_raw: "About Me"
+      user:
+        ip_address: ""
+    errors:
+      messages:
+        is_invalid: "is invalid; try to be a little more descriptive"
+        has_already_been_used: "has already been used"
+      models:
+        topic:
+          attributes:
+            base:
+              warning_requires_pm: "You can only attach warnings to private messages."
+              too_many_users: "You can only send warnings to one user at a time."
+              cant_send_pm: "Sorry, you cannot send a private message to that user."
+              no_user_selected: "You must select a valid user."
+        user:
+          attributes:
+            password:
+              common: "is one of the 10000 most common passwords. Please use a more secure password."
+              same_as_username: "is the same as your username. Please use a more secure password."
+              same_as_email: "is the same as your email. Please use a more secure password."
+            ip_address:
+              signup_not_allowed: "Signup is not allowed from this account."
+        color_scheme_color:
+          attributes:
+            hex:
+              invalid: "is not a valid color"
+
+  user_profile:
+    no_info_me: "<div class='missing-profile'>the About Me field of your profile is currently blank, <a href='/users/%{username_lower}/preferences/about-me'>would you like to fill it out?</a></div>"
+    no_info_other: "<div class='missing-profile'>%{name} hasn't entered anything in the About Me field of their profile yet</div>"
+
+  vip_category_name: "Lounge"
+  vip_category_description: "A category exclusive to members with trust level 3 and higher."
+
+  meta_category_name: "Meta"
+  meta_category_description: "Discussion about this site, its organization, how it works, and how we can improve it."
+
+  staff_category_name: "Staff"
+  staff_category_description: "Private category for staff discussions. Topics are only visible to admins and moderators."
+
+  assets_topic_body: "This is a permanent topic, visible only to staff, for storing images and files used in the site design. Don't delete it!\n\n\nHere's how:\n\n\n1. Reply to this topic.\n2. Upload all the images you wish to use for logos, favicons, and so forth here. (Use the upload toolbar icon in the post editor, or drag-and-drop or paste images.)\n3. Submit your reply to post it.\n4. Right click the images in your new post to get the path to the uploaded images, or click the edit icon to edit your post and retrieve the path to the images. Copy the image paths.\n5. Paste those image paths into [basic settings](/admin/site_settings/category/required).\n\n\nIf you need to enable different file type uploads, edit `authorized_extensions` in the [file settings](/admin/site_settings/category/files)."
+
+  lounge_welcome:
+    title: "Welcome to the Lounge"
+    body: |
+
+      Congratulations! :confetti_ball:
+
+      If you can see this topic, you were recently promoted to **regular** (trust level 3).
+
+      You can now &hellip;
+
+      * Edit the title of any topic
+      * Change the category of any topic
+      * Have all your links followed ([automatic nofollow](http://en.wikipedia.org/wiki/Nofollow) is removed)
+      * Access a private Lounge category only visible to users at trust level 3 and higher
+      * Hide spam with a single flag
+
+      Here's the [current list of fellow regulars](/badges/3/regular). Be sure to say hi.
+
+      Thanks for being an important part of this community!
+
+      (For more information on trust levels, [see this topic][trust]. Please note that only members who continue to meet the requirements over time will remain regulars.)
+
+      [trust]: https://meta.discourse.org/t/what-do-user-trust-levels-do/4924
+
+
+  category:
+    topic_prefix: "About the %{category} category"
+    replace_paragraph: "[Replace this first paragraph with a short description of your new category. This guidance will appear in the category selection area, so try to keep it below 200 characters. Until you edit this text or create topics, this category won't appear on the categories page.]"
+    post_template: "%{replace_paragraph}\n\nUse the following paragraphs for a longer description, as well as to establish any category guidelines or rules.\n\nSome things to consider in any discussion replies below:\n\n- What is this category for? Why should people select this category for their topic?\n\n- How is this different than the other categories we already have?\n\n- Do we need this category?\n\n- Should we merge this with another category, or split it into more categories?\n"
+    errors:
+      uncategorized_parent: "Uncategorized can't have a parent category"
+      self_parent: "A subcategory's parent cannot be itself"
+      depth: "You can't nest a subcategory under another"
+    cannot_delete:
+      uncategorized: "Can't delete Uncategorized"
+      has_subcategories: "Can't delete this category because it has sub-categories."
+      topic_exists:
+        one: "Can't delete this category because is has 1 topic. Oldest topic is %{topic_link}."
+        other: "Can't delete this category because it has %{count} topics. Oldest topic is %{topic_link}."
+      topic_exists_no_oldest: "Can't delete this category because topic count is %{count}."
+  trust_levels:
+    newuser:
+      title: "new user"
+    basic:
+      title: "basic user"
+    regular:
+      title: "member"
+    leader:
+      title: "regular"
+    elder:
+      title: "leader"
+    change_failed_explanation: "You attempted to demote %{user_name} to '%{new_trust_level}'. However their trust level is already '%{current_trust_level}'. %{user_name} will remain at '%{current_trust_level}' - if you wish to demote user lock trust level first"
+
+
+  rate_limiter:
+    slow_down: "You have performed this action too many times, try again later"
+    too_many_requests: "We have a daily limit on how many times that action can be taken. Please wait %{time_left} before trying again."
+    hours:
+      one: "1 hour"
+      other: "%{count} hours"
+    minutes:
+      one: "1 minute"
+      other: "%{count} minutes"
+    seconds:
+      one: "1 second"
+      other: "%{count} seconds"
+
+  datetime:
+    distance_in_words:
+      half_a_minute: "< 1m"
+      less_than_x_seconds:
+        one:   "< 1s"
+        other: "< %{count}s"
+      x_seconds:
+        one:   "1s"
+        other: "%{count}s"
+      less_than_x_minutes:
+        one:   "< 1m"
+        other: "< %{count}m"
+      x_minutes:
+        one:   "1m"
+        other: "%{count}m"
+      about_x_hours:
+        one:   "1h"
+        other: "%{count}h"
+      x_days:
+        one:   "1d"
+        other: "%{count}d"
+      about_x_months:
+        one:   "1mon"
+        other: "%{count}mon"
+      x_months:
+        one:   "1mon"
+        other: "%{count}mon"
+      about_x_years:
+        one:   "1y"
+        other: "%{count}y"
+      over_x_years:
+        one:   "> 1y"
+        other: "> %{count}y"
+      almost_x_years:
+        one:   "1y"
+        other: "%{count}y"
+
+    distance_in_words_verbose:
+      half_a_minute: "just now"
+      less_than_x_seconds:
+        one:   "just now"
+        other: "just now"
+      x_seconds:
+        one:   "1 second ago"
+        other: "%{count} seconds ago"
+      less_than_x_minutes:
+        one:   "less than 1 minute ago"
+        other: "less than %{count} minutes ago"
+      x_minutes:
+        one:   "1 minute ago"
+        other: "%{count} minutes ago"
+      about_x_hours:
+        one:   "1 hour ago"
+        other: "%{count} hours ago"
+      x_days:
+        one:   "1 day ago"
+        other: "%{count} days ago"
+      about_x_months:
+        one:   "about 1 month ago"
+        other: "about %{count} months ago"
+      x_months:
+        one:   "1 month ago"
+        other: "%{count} months ago"
+      about_x_years:
+        one:   "about 1 year ago"
+        other: "about %{count} years ago"
+      over_x_years:
+        one:   "over 1 year ago"
+        other: "over %{count} years ago"
+      almost_x_years:
+        one:   "almost 1 year ago"
+        other: "almost %{count} years ago"
+
+  password_reset:
+    no_token: "Sorry, your token has expired. Please try resetting your password again."
+    choose_new: "Please choose a new password"
+    choose: "Please choose a password"
+    update: 'Update Password'
+    save: 'Set Password'
+    title: 'Reset Password'
+    success: "You successfully changed your password and are now logged in."
+    success_unapproved: "You successfully changed your password."
+    continue: "Continue to %{site_name}"
+
+  change_email:
+    confirmed: "Your email has been updated."
+    please_continue: "Continue to %{site_name}"
+    error: "There was an error changing your email address. Perhaps the address is already in use?"
+
+  activation:
+    action: "Activate your account"
+    already_done: "Sorry, this account confirmation link is no longer valid. Perhaps your account is already active?"
+    please_continue: "Your new account is confirmed; you will be redirected to the home page."
+    continue_button: "Continue to %{site_name}"
+    welcome_to: "Welcome to %{site_name}!"
+    approval_required: "A moderator must manually approve your new account before you can access this forum. You'll get an email when your account is approved!"
+
+  post_action_types:
+    off_topic:
+      title: 'Off-Topic'
+      description: 'This post is not relevant to the current discussion as defined by the title and first post, and should probably be moved elsewhere.'
+      long_form: 'flagged this as off-topic'
+    spam:
+      title: 'Spam'
+      description: 'This post is an advertisement. It is not useful or relevant to the current topic, but promotional in nature.'
+      long_form: 'flagged this as spam'
+      email_title: '"%{title}" was flagged as spam'
+      email_body: "%{link}\n\n%{message}"
+    inappropriate:
+      title: 'Inappropriate'
+      description: 'This post contains content that a reasonable person would consider offensive, abusive, or a violation of <a href="/guidelines">our community guidelines</a>.'
+      long_form: 'flagged this as inappropriate'
+    notify_user:
+      title: 'Message @{{username}}'
+      description: 'This post contains something I want to talk to this person directly and privately about. Does not cast a flag.'
+      long_form: 'messaged user'
+      email_title: 'Your post in "%{title}"'
+      email_body: "%{link}\n\n%{message}"
+    notify_moderators:
+      title: "Something Else"
+      description: 'This post requires moderator attention for another reason not listed above.'
+      long_form: 'flagged this for moderator attention'
+      email_title: 'A post in "%{title}" requires moderator attention'
+      email_body: "%{link}\n\n%{message}"
+    bookmark:
+      title: 'Bookmark'
+      description: 'Bookmark this post'
+      long_form: 'bookmarked this post'
+    like:
+      title: 'Like'
+      description: 'Like this post'
+      long_form: 'liked this'
+    vote:
+      title: 'Vote'
+      description: 'Vote for this post'
+      long_form: 'voted for this post'
+
+  topic_flag_types:
+    spam:
+      title: 'Spam'
+      description: 'This topic is an advertisement. It is not useful or relevant to this site, but promotional in nature.'
+      long_form: 'flagged this as spam'
+    inappropriate:
+      title: 'Inappropriate'
+      description: 'This topic contains content that a reasonable person would consider offensive, abusive, or a violation of <a href="/guidelines">our community guidelines</a>.'
+      long_form: 'flagged this as inappropriate'
+    notify_moderators:
+      title: "Something Else"
+      description: 'This topic requires general moderator attention based on the <a href="/guidelines">guidelines</a>, <a href="%{tos_url}">TOS</a>, or for another reason not listed above.'
+      long_form: 'flagged this for moderator attention'
+      email_title: 'The topic "%{title}" requires moderator attention'
+      email_body: "%{link}\n\n%{message}"
+
+  flagging:
+    you_must_edit: '<p>Your post was flagged by the community. Please <a href="/my/private-messages">see your messages</a>.</p>'
+    user_must_edit: '<p>This post was flagged by the community and is temporarily hidden.</p>'
+
+  archetypes:
+    regular:
+      title: "Regular Topic"
+    banner:
+      message:
+        make: "This topic is now a banner. It will appear at the top of every page until it is dismissed by the user."
+        remove: "This topic is no longer a banner. It will no longer appear at the top of every page."
+
+  unsubscribed:
+    title: 'Unsubscribed'
+    description: "You have been unsubscribed. We won't contact you again!"
+    oops: "In case you didn't mean to do this, click below."
+    error: "Error Unsubscribing"
+    preferences_link: "You can also unsubscribe from digest emails on your <a href='/my/preferences'>preferences page</a>"
+    different_user_description: "You are currently logged in as a different user than the one who the digest was mailed to. Please log out and try again."
+    not_found_description: "Sorry, we couldn't unsubscribe you. It's possible the link in your email has expired."
+
+  resubscribe:
+    action: "Re-Subscribe"
+    title: "Re-Subscribed!"
+    description: "You have been re-subscribed."
+
+  reports:
+    visits:
+      title: "User Visits"
+      xaxis: "Day"
+      yaxis: "Number of visits"
+    signups:
+      title: "New Users"
+      xaxis: "Day"
+      yaxis: "Number of new users"
+    topics:
+      title: "Topics"
+      xaxis: "Day"
+      yaxis: "Number of new topics"
+    posts:
+      title: "Posts"
+      xaxis: "Day"
+      yaxis: "Number of new posts"
+    likes:
+      title: "Likes"
+      xaxis: "Day"
+      yaxis: "Number of new likes"
+    flags:
+      title: "Flags"
+      xaxis: "Day"
+      yaxis: "Number of flags"
+    bookmarks:
+      title: "Bookmarks"
+      xaxis: "Day"
+      yaxis: "Number of new bookmarks"
+    starred:
+      title: "Starred"
+      xaxis: "Day"
+      yaxis: "Number of new starred topics"
+    users_by_trust_level:
+      title: "Users per Trust Level"
+      xaxis: "Trust Level"
+      yaxis: "Number of Users"
+    emails:
+      title: "Emails Sent"
+      xaxis: "Day"
+      yaxis: "Number of Emails"
+    user_to_user_private_messages:
+      title: "User-to-User"
+      xaxis: "Day"
+      yaxis: "Number of messages"
+    system_private_messages:
+      title: "System"
+      xaxis: "Day"
+      yaxis: "Number of messages"
+    moderator_warning_private_messages:
+      title: "Moderator Warning"
+      xaxis: "Day"
+      yaxis: "Number of messages"
+    notify_moderators_private_messages:
+      title: "Notify Moderators"
+      xaxis: "Day"
+      yaxis: "Number of messages"
+    notify_user_private_messages:
+      title: "Notify User"
+      xaxis: "Day"
+      yaxis: "Number of messages"
+    top_referrers:
+      title: "Top Referrers"
+      xaxis: "User"
+      num_clicks: "Clicks"
+      num_topics: "Topics"
+    top_traffic_sources:
+      title: "Top Traffic Sources"
+      xaxis: "Domain"
+      num_clicks: "Clicks"
+      num_topics: "Topics"
+      num_users: "Users"
+    top_referred_topics:
+      title: "Top Referred Topics"
+      xaxis: "Topic"
+      num_clicks: "Clicks"
+    page_view_anon_reqs:
+      title: "Anonymous"
+      xaxis: "Day"
+      yaxis: "Anonymous API Requests"
+    page_view_logged_in_reqs:
+      title: "Logged In"
+      xaxis: "Day"
+      yaxis: "Logged In API Requests"
+    page_view_crawler_reqs:
+      title: "Web Crawlers"
+      xaxis: "Day"
+      yaxis: "Web Crawler API Requests"
+    page_view_total_reqs:
+      title: "Total"
+      xaxis: "Day"
+      yaxis: "Total API Requests"
+    http_background_reqs:
+      title: "Background"
+      xaxis: "Day"
+      yaxis: "Requests used for live update and tr
